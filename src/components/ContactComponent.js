@@ -8,7 +8,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form'
 
 //Form Validation
 
-const required = val => val; //Field has a value and it is longer than zero
+const required = val => val && val.length; //Field has a value and it is longer than zero
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
 const isNumber = val => !isNaN(+val);
@@ -45,7 +45,7 @@ class Contact extends Component {
         alert('Current state is: ' + JSON.stringify(values));
     }
 
-    // Form Design
+
     render() {
 
         return (
@@ -75,11 +75,15 @@ class Contact extends Component {
                         <a role="button" className="btn btn-link" href="mailto:fakeemail@fakeemail.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
                     </div>
                 </div>
+
                 <div className="row row-content">
                     <div className="col-12">
                         <h2>Send us your Feedback</h2>
                         <hr />
                     </div>
+
+                    {/* Form Design */}
+
                     <div className="col-md-10">
                         <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className='form-group'>
