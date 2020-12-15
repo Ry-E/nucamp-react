@@ -4,7 +4,7 @@ import {
     Button, Label, Col, Row
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, Form, Errors, actions } from 'react-redux-form'
+import { Control, Form, Errors } from 'react-redux-form'
 
 //Form Validation
 
@@ -41,9 +41,8 @@ class Contact extends Component {
 
     // Shows the changed values after form is submited
     handleSubmit(values) {
-        console.log('Current state is: ' + JSON.stringify(values));
-        alert('Current state is: ' + JSON.stringify(values));
         this.props.resetFeedbackForm();
+        this.props.postFeedback(values);
     }
 
 

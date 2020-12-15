@@ -104,7 +104,7 @@ class CommentForm extends Component {
                             </div>
                             <div className="form-group">
                                 <Label hmtlFor='author'>Your Name</Label>
-                                <Control.text model='.author' name='author' id='author' name='author'
+                                <Control.text model='.author' id='author' name='author'
                                     placeholder='John Doe'
                                     className='form-control'
                                     validators={{

@@ -13,12 +13,12 @@ function RenderDirectoryItem({ campsite }) {
                     <CardTitle>{campsite.name}</CardTitle>
                 </CardImgOverlay>
             </Link>
-        </Card>
+        </Card >
+
     )
 }
 
 function Directory(props) {
-
     const directory = props.campsites.campsites.map(campsite => {
         return (
             <div key={campsite.id} className="col-md-5 m-1">
@@ -64,6 +64,7 @@ function Directory(props) {
             <div className="row">
                 {directory}
             </div>
+
         </div>
     )
 }
